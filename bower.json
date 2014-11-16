@@ -1,0 +1,25 @@
+{
+  "name": "html5-timer-w-notification",
+  "version": "0.0.0",
+  "authors": [
+    "(Clay Stewart <claytonmstewart@gmail.com>)"
+  ],
+  "description": "I wanted a quick and dirty timing application that would send up an html5 desktop notification when the timer goes off.",
+  "main": "index.html",
+  "keywords": [
+    "timer"
+  ],
+  "license": "MIT",
+  "homepage": "http://what.clay.codes",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.1"
+  }
+}
