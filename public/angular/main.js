@@ -2,7 +2,7 @@
 
 (function(app) {
 
-  var app = angular.module('timer', []);
+  var app = angular.module('timer', ['ui.bootstrap']);
 
   app.controller('MainCtlr', ['$scope','$timeout', function($scope,$timeout) {
     /*
