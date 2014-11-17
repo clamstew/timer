@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="timer">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Online Timer with HTML5 Notifications</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style type="text/css">
+          input, textarea {
+            display: block;
+          }
+        </style>
+    </head>
+    <body ng-controller="MainCtlr">
+      <!-- tell people to get with the javascript program -->
+      <noscript>You should get some javascript!</noscript>
+
+      <!-- main dom -->
+      <button id="requestPermission">Request Permission</button>
+      <button id="checkPermission">Check Permission</button>
+      <div>
+        Permission: <span id="result">-</span>
+      </div>
+      <input name="title" placeholder="title"/>
+      <input name="tag" placeholder="tag"/>
+      <input name="icon" type="url" placeholder="icon"/ >
+      <textarea name="body" placeholder="body">
+      </textarea>
+      <button id="show">show</button>
+
+      <hr/>
+
+      Type time (in milliseconds): <input ng-model="time" />
+
+      <hr/>
+
+      <h1>{{ time | millSecondsToTimeString }}</h1>
+
+      <button ng-click="startTimer()" >Start</button>
+
+      <!-- body goes here -->
+      <script type="text/javascript" src="/jquery/dist/jquery.min.js"></script>
+      <script type="text/javascript" src="/angular/angular.min.js"></script>
+      <script type="text/javascript" src="/angular/main.js"></script>
+      <script type="text/javascript" src="script.js"></script>
+    </body>
+</html>
