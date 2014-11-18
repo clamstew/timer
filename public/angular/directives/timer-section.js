@@ -2,12 +2,14 @@
 
 (function(app) {
 
-  app.directive('timerSection', ['notifications','$timeout', function(notifications, $timeout) {
+  app.directive('timerSection', ['notifications','$timeout','time',
+    function(notifications, $timeout, time) {
 
     var link = function(scope, element, attrs){
+
       var init = (function() {
         scope.notificationArgs = notifications.initNotification();
-        scope.time = 5000;
+        scope.time = time.getDuration();
         scope.startTimerBtnTxt = "Start Timer";
         scope.timerStarted = false;
       })();
@@ -35,6 +37,7 @@
       scope.$on('notifications:updateNotif', function(event, data) {
         scope.notificationArgs = data;
       });
+
     };
 
     return {
