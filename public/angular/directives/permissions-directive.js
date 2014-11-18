@@ -21,10 +21,12 @@
 
       // color the text of the permission result appropriately
       scope.permissionResultClass = function(){
-        if (scope.result === 'granted') return 'text-success';
-        if (scope.result === 'default') return 'text-warning';
-        if (scope.result === 'denied') return 'text-danger';
-        return '';
+        switch (scope.result) {
+          case 'granted': return 'text-success'; break;
+          case 'default': return 'text-warning'; break;
+          case 'denied' : return 'text-danger' ; break;
+          default: return '';
+        }
       };
     };
 
