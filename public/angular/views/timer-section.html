@@ -1,0 +1,5 @@
+<hr/>
+Type time (in milliseconds): <input class="form-control" ng-model="time" />
+<hr/>
+<h1>{{ time | millSecondsToTimeString }}</h1>
+<button class="btn btn-primary btn-lg btn-block" ng-click="startTimer()" ng-disabled="timerStarted">{{ startTimerBtnTxt }}</button>

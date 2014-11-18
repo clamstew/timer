@@ -1,0 +1,10 @@
+<hr />
+<h2>Notification Browser Permissions</h2>
+<!-- enable check status of html5 notifs -->
+<div class="form-group">
+  <button class="btn btn-info" ng-click="requestPermission()">Request Permission</button>
+  <button class="btn btn-info" ng-click="checkPermission()">Check Permission</button>
+  <div>
+    <h2>Permission: <span ng-class="permissionResultClass()">{{ result }}</span></h2>
+  </div>
+</div>

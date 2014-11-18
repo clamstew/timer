@@ -7,16 +7,9 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.min.css">
-        <link href="/timer15.png" rel="shortcut icon" type="image/vnd.microsoft.icon">
-        <style type="text/css">
-          input, textarea {
-            display: block;
-          }
-          textarea.form-control { height: 110px; }
-          [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
-            display: none !important;
-          }
-        </style>
+        <link rel="stylesheet" href="/styles/styles.css">
+        <link href="/images/timer15.png" rel="shortcut icon" type="image/vnd.microsoft.icon">
+
     </head>
     <body ng-controller="MainCtlr" ng-cloak class="ng-cloak">
       <!-- tell people to get with the javascript program -->
@@ -25,67 +18,53 @@
       <!-- main dom -->
       <div class="container">
 
+        <!-- header -->
         <div class="row">
           <div class="col-md-6 col-md-offset-3 header">
-            <h1><img src="timer15.png"/> HTML5 Timer and Notification</h1>
+            <h1><img src="/images/timer15.png"/> HTML5 Timer and Notification</h1>
           </div>
         </div>
 
+        <!-- tabs -->
         <div class="row">
           <div class="col-md-6 col-md-offset-3">
-            <div tabset justified="true">
 
+            <!-- TABSSET -->
+            <div tabset justified="true">
               <!-- TIMER TAB -->
               <div tab heading="Timer">
-                <hr/>
-                Type time (in milliseconds): <input class="form-control" ng-model="time" />
-                <hr/>
-                <h1>{{ time | millSecondsToTimeString }}</h1>
-                <button class="btn btn-primary btn-lg btn-block" ng-click="startTimer()" ng-disabled="timerStarted">{{ startTimerBtnTxt }}</button>
-              </div><!-- end of <div tab heading="Timer"> -->
-
+                <div timer-section></div>
+              </div>
               <!-- CUSTOMIZE TAB -->
               <div tab heading="Customize">
-                <!-- customize notif -->
-                <hr />
-                <h2>Customize Notification</h2>
-                <div class="form-group">
-                  <label>Title</label>
-                  <input class="form-control" placeholder="title" ng-model="title" />
-                  <label>Tags</label>
-                  <input class="form-control" ng-model="tag" placeholder="tag" />
-                  <label>Icon</label>
-                  <input class="form-control" ng-model="icon" type="url" placeholder="icon full url"  / >
-                  <label>Body</label>
-                  <textarea class="form-control" ng-model="body" placeholder="body"></textarea>
-                  <!-- test out your customizations before using with timer -->
-                  <button class="btn btn-default" ng-click="testNotification()">Test</button>
-                </div>
-              </div><!-- end of <div tab heading="Customize"> -->
-
+                <div customize-notif></div>
+              </div>
               <!-- PERMISSIONS TAB -->
               <div tab heading="Permissions">
-                <hr />
-                <h2>Notification Browser Permissions</h2>
-                <!-- enable check status of html5 notifs -->
-                <div class="form-group">
-                  <button class="btn btn-info" ng-click="requestPermission()">Request Permission</button>
-                  <button class="btn btn-info" ng-click="checkPermission()">Check Permission</button>
-                  <div>
-                    <h2>Permission: <span ng-class="permissionResultClass()">{{ result }}</span></h2>
-                  </div>
-                </div>
-              </div><!-- end of <div tab heading="Permissions"> -->
-
+                <div permissions-tab></div>
+              </div>
             </div><!-- end of <div tabset justified="true"> -->
+
           </div><!-- <div class="col-md-6 col-md-offset-3"> -->
         </div><!-- <div class="row"> -->
 
       </div><!-- end of .container -->
 
-      <!-- body goes here -->
+      <!-- javascript -->
       <script type="text/javascript" src="/angular/angular.min.js"></script>
+      <script type="text/javascript" src="/moment/min/moment.min.js"></script>
       <script type="text/javascript" src="/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+      <!-- my angular -->
       <script type="text/javascript" src="/angular/main.js"></script>
+      <!-- filters -->
+      <script type="text/javascript" src="/angular/filters/ms-to-time-string.js"></script>
+      <!-- services -->
+      <script type="text/javascript" src="/angular/services/notifications.js"></script>
+      <!-- directives -->
+      <script type="text/javascript" src="/angular/directives/timer-section.js"></script>
+      <script type="text/javascript" src="/angular/directives/customize-notif.js"></script>
+      <script type="text/javascript" src="/angular/directives/permissions-directive.js"></script>
+      <!-- controllers -->
+      <script type="text/javascript" src="/angular/controllers/main-controller.js"></script>
     </body>
 </html>

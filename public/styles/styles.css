@@ -1,0 +1,7 @@
+input, textarea {
+  display: block;
+}
+textarea.form-control { height: 110px; }
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}

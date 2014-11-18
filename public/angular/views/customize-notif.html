@@ -1,0 +1,17 @@
+<div>
+  <hr />
+  <h2>Customize Notification</h2>
+  <div class="form-group">
+    <label>Title</label>
+    <input class="form-control" placeholder="title" ng-change="updateNotification()" ng-model="notificationArgs.title" />
+    <label>Tags</label>
+    <input class="form-control" ng-model="notificationArgs.tag" placeholder="tag" ng-change="updateNotification()" />
+    <label>Icon</label>
+    <input class="form-control" ng-model="notificationArgs.icon" type="url" placeholder="icon full url" ng-change="updateNotification()" / >
+    <label>Body</label>
+    <textarea class="form-control" ng-model="notificationArgs.body" placeholder="body" ng-change="updateNotification()"></textarea>
+    <!-- test out your customizations before using with timer -->
+    <br />
+    <button class="btn btn-default btn-lg btn-block" ng-click="testNotification()">Test</button>
+  </div>
+</div>
