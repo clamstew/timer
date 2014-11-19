@@ -1,3 +1,5 @@
+<img src="/public/images/screenshot-1.5.png" alt="interface screenshot" />
+
 ## The Goal:
 ----
 
