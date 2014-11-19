@@ -5,3 +5,9 @@ textarea.form-control { height: 110px; }
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
   display: none !important;
 }
+
+timer {
+  font-size: 3rem;
+  font-weight: bold;
+  /*text-align: center;*/
+}

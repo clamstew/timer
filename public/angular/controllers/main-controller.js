@@ -1,6 +1,5 @@
 (function(app) {
 
-  app.controller('MainCtlr', [function() {
-  }]);
+  app.controller('MainCtlr', [function(){}]);
 
 })(timer.app);

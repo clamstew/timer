@@ -2,10 +2,12 @@
 
 (function(app) {
 
-  app.directive('timerSection', ['notifications','$timeout','time',
+  app.directive('timerSection', ['notifications', '$timeout', 'time',
     function(notifications, $timeout, time) {
 
     var link = function(scope, element, attrs){
+
+      var angularTimer = element.find('timer')[0];
 
       var init = (function() {
         scope.notificationArgs = notifications.initNotification();
@@ -24,7 +26,7 @@
       scope.startTimer = function() {
         updateTimerState();
         scope.startTimerBtnTxt = "Timer is Running ...";
-        console.log('what is time', scope.time);
+        angularTimer.start();
         $timeout(function() {
           notifications.showNotif(scope.notificationArgs);
           updateTimerState();
@@ -36,6 +38,10 @@
       // customize menu
       scope.$on('notifications:updateNotif', function(event, data) {
         scope.notificationArgs = data;
+      });
+
+      scope.$watch('time', function() {
+        scope.$broadcast('timer-set-countdown-seconds', scope.time / 1000);
       });
 
     };
