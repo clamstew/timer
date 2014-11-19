@@ -23,10 +23,10 @@
 
       scope.timerRunningTimeoutExec = function() {
         scope.timerRunningTimeout = $timeout(function() {
-          notifications.showNotif(scope.notificationArgs);
           updateTimerState();
           scope.startTimerBtnTxt = "Enter a new time above";
           scope.timerJustEnded = true;
+          notifications.showNotif(scope.notificationArgs);
         }, scope.time);
       };
 
