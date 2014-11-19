@@ -25,7 +25,8 @@
         scope.timerRunningTimeout = $timeout(function() {
           notifications.showNotif(scope.notificationArgs);
           updateTimerState();
-          scope.startTimerBtnTxt = "Start Timer";
+          scope.startTimerBtnTxt = "Enter a new time above";
+          scope.timerJustEnded = true;
         }, scope.time);
       };
 
@@ -52,6 +53,8 @@
       });
 
       scope.$watch('time', function() {
+        scope.timerJustEnded = false;
+        scope.startTimerBtnTxt = "Start Timer";
         scope.$broadcast('timer-set-countdown-seconds', scope.time / 1000);
       });
 
