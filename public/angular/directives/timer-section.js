@@ -21,17 +21,28 @@
         scope.timerStarted = !scope.timerStarted;
       };
 
+      scope.timerRunningTimeoutExec = function() {
+        scope.timerRunningTimeout = $timeout(function() {
+          notifications.showNotif(scope.notificationArgs);
+          updateTimerState();
+          scope.startTimerBtnTxt = "Start Timer";
+        }, scope.time);
+      };
+
       // used as model for input for user picked time
       // also used in the $timeout as timeout time
       scope.startTimer = function() {
         updateTimerState();
         scope.startTimerBtnTxt = "Timer is Running ...";
         angularTimer.start();
-        $timeout(function() {
-          notifications.showNotif(scope.notificationArgs);
-          updateTimerState();
-          scope.startTimerBtnTxt = "Start Timer";
-        }, scope.time);
+        scope.timerRunningTimeoutExec();
+      };
+
+      scope.stopTimer = function() {
+        updateTimerState();
+        scope.startTimerBtnTxt = "Start Timer";
+        angularTimer.stop();
+        $timeout.cancel(scope.timerRunningTimeout);
       };
 
       // update notification settings when it is updated in

@@ -8,4 +8,5 @@ Type time (in milliseconds): <input class="form-control" ng-model="time" />
 </div>
 <br/><br/>
 <button class="btn btn-primary btn-lg btn-block" ng-click="startTimer()" ng-disabled="timerStarted">{{ startTimerBtnTxt }}</button>
+<button class="btn btn-danger btn-lg btn-block" ng-click="stopTimer()" ng-show="timerStarted">Stop</button>
 <hr />
