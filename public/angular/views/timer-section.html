@@ -7,6 +7,6 @@ Type time (in milliseconds): <input class="form-control" ng-model="time" />
   <timer interval="1000" countdown="5000" autostart="false">{{hours}} hours, {{minutes}} minutes, {{seconds}} seconds</timer>
 </div>
 <br/><br/>
-<button class="btn btn-primary btn-lg btn-block" ng-click="startTimer()" ng-disabled="timerStarted || timerJustEnded">{{ startTimerBtnTxt }}</button>
+<button class="btn btn-primary btn-lg btn-block" ng-click="startTimer()" ng-disabled="timerStarted">{{ startTimerBtnTxt }}</button>
 <button class="btn btn-danger btn-lg btn-block" ng-click="stopTimer()" ng-show="timerStarted">Stop</button>
 <hr />
