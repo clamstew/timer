@@ -3,6 +3,8 @@
 ## The Goal:
 ----
 
+[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/clamstew/timer?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 I wanted a quick and dirty timing application that would send up an html5 desktop notification when the timer goes off.
 
 So .. you'll see it when you're working and the timer goes off.
